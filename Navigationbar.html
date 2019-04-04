@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航栏示例</title>
+    <!--引入本地的css样式-->
+    <link rel="stylesheet" href="lib/css/mycss.css">
+    <!--引入BootStrap的css样式-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!--引入jquery支持-->
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!--所有的js操作在此书写-->
+    <script>
+        $(document).ready(function(){
+            //顶部导航栏的切换效果
+            $("#mytab1 li").click(function (e) {
+                e.preventDefault();
+                $("#mytab1 li").removeClass("active");
+                $(this).addClass("active");
+            });
+            //一般导航栏的切换效果
+            $('#mytab2 li').click(function (e) {
+                e.preventDefault();
+                $("#mytab2 li").removeClass("active");
+                $(this).addClass("active");
+            });
+            $('#mytab3 li').click(function (e) {
+                e.preventDefault();
+                $("#mytab3 li").removeClass("active");
+                $(this).addClass("active");
+            });
+            $('#mytab4 li').click(function (e) {
+                e.preventDefault();
+                $("#mytab4 li").removeClass("active");
+                $(this).addClass("active");
+            });
+            $('#mytab5 li').click(function (e) {
+                e.preventDefault();
+                $("#mytab5 li").removeClass("active");
+                $(this).addClass("active");
+            });
+            $(".showDetails button").click(function (e) {
+                //判断所点击的元素是否隐藏（如果隐藏即为第一次点击，显示所点击的代码；如果为显示状态即为第二次点击，隐藏所点击的代码 ）
+                if($(this).next().is(":hidden")) {
+                    $(".showDetails pre").hide();
+                    $(this).next().show();
+                }else{
+                    $(this).next().hide();
+                }
+            })
+        });
+    </script>
+    <!--引入BootStrap的js样式-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</head>
+<body>
+<div>
+<!--顶部导航栏-->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    <!--广告牌可插入图片（不能过大，会影响尺寸）-->
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">Bootstrap</a>
+        </div>
+
+        <!--导航栏元素（可一直添加）-->
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav" id="mytab1">
+                <li class="active"><a href="#">我的</a></li>
+                <li><a href="#">你的</a></li>
+                <li><a href="#">他的</a></li>
+            </ul>
+
+            <!--导航栏form表单（用于搜索框）-->
+            <form class="navbar-form navbar-left">
+                <div class="form-group input-group">
+                    <input type="text" class="form-control" id="key-movie" placeholder="请输入查找内容">
+                    <span class="input-group-btn">
+                        <a class="btn btn-default">
+                        <span class="glyphicon glyphicon-search"></span>搜索
+                        </a>
+                    </span>
+                </div>
+            </form>
+
+            <!--导航栏信息下拉（用于显示状态）-->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">User<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">我的关注</a></li>
+                    <li><a href="#">我的收藏</a></li>
+                    <li><a href="#">我的文章</a></li>
+                    <li><a href="#">我的活动</a></li>
+                </ul>
+                </li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="showDetails">
+<button type="button" class="btn btn-default col-md-12">显示源代码</button>
+<pre class="pre-scrollable" style="color:red;display: none">
+<h3 style="color:black;">源代码如下：</h3>
+&lt;!--顶部导航栏--&gt;
+&lt;nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"&gt;
+
+    &lt;!--广告牌可插入图片（不能过大，会影响尺寸）--&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="navbar-header"&gt;
+            &lt;a href="#" class="navbar-brand"&gt;Bootstrap&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;!--导航栏元素（可一直添加）--&gt;
+        &lt;div id="navbar" class="collapse navbar-collapse"&gt;
+            &lt;ul class="nav navbar-nav" id="mytab1"&gt;
+                &lt;li class="active"&gt;&lt;a href="#"&gt;我的&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;你的&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;他的&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+
+            &lt;!--导航栏form表单（用于搜索框）--&gt;
+            &lt;form class="navbar-form navbar-left"&gt;
+                &lt;div class="form-group input-group"&gt;
+                    &lt;input type="text" class="form-control" id="key-movie" placeholder="请输入查找内容"&gt;
+                    &lt;span class="input-group-btn"&gt;
+                        &lt;a class="btn btn-default"&gt;
+                        &lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;搜索
+                        &lt;/a&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+
+            &lt;!--导航栏信息下拉（用于显示状态）--&gt;
+            &lt;ul class="nav navbar-nav navbar-right"&gt;
+                &lt;li class="dropdown"&gt;&lt;a href="#" class="dropdown-toggle" data-toggle="dropdown"&gt;User&lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
+                &lt;ul class="dropdown-menu" role="menu"&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;我的关注&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;我的收藏&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;我的文章&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;我的活动&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+</pre>
+</div>
+<br><br><br><br><br>
+
+<!--左侧悬浮导航栏-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <ul id="main-nav" class="nav nav-tabs nav-stacked">
+                <li class="active"><a href="#"><i class="glyphicon glyphicon-th-large"></i> 一级A</a></li>
+                <li><a href="#systemSetting" class="nav-header collapsed" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-cog"></i>
+                    一级B
+                    <span class="pull-right glyphicon glyphicon-chevron-down"></span>
+                </a>
+                    <ul id="systemSetting" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                        <li><a href="Navigationbar.html"><i class="glyphicon glyphicon-user"></i>二级A</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-th-list"></i>二级B</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-asterisk"></i>二级C</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-edit"></i>二级D</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-eye-open"></i>二级E</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="glyphicon glyphicon-credit-card"></i> 一级C</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-globe"></i> 一级D<span class="label label-warning pull-right">5</span></a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-calendar"></i> 一级E</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-fire"></i> 一级F</a></li>
+            </ul>
+        </div>
+        <div class="col-md-10">
+            <div class="showDetails">
+<button type="button" class="btn btn-default col-md-12">显示源代码</button>
+<pre class="pre-scrollable" style="color:red;display: none">
+                <h3 style="color:black;">源代码如下：</h3>
+&lt;div class="container-fluid"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-2"&gt;
+            &lt;ul id="main-nav" class="nav nav-tabs nav-stacked"&gt;
+                &lt;li class="active"&gt;&lt;a href="#"&gt;&lt;i class="glyphicon glyphicon-th-large"&gt;&lt;/i&gt; 一级A&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#systemSetting" class="nav-header collapsed" data-toggle="collapse"&gt;
+                    &lt;i class="glyphicon glyphicon-cog"&gt;&lt;/i&gt;
+                    一级B
+                    &lt;span class="pull-right glyphicon glyphicon-chevron-down"&gt;&lt;/span&gt;
+                &lt;/a&gt;
+                    &lt;ul id="systemSetting" class="nav nav-list collapse secondmenu" style="height: 0px;"&gt;
+                        &lt;li&gt;&lt;a href="Navigationbar.html"&gt;&lt;i class="glyphicon glyphicon-user"&gt;&lt;/i&gt;二级A&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;i class="glyphicon glyphicon-th-list"&gt;&lt;/i&gt;二级B&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;i class="glyphicon glyphicon-asterisk"&gt;&lt;/i&gt;二级C&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;i class="glyphicon glyphicon-edit"&gt;&lt;/i&gt;二级D&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;i class="glyphicon glyphicon-eye-open"&gt;&lt;/i&gt;二级E&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;i class="glyphicon glyphicon-credit-card"&gt;&lt;/i&gt; 一级C&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;i class="glyphicon glyphicon-globe"&gt;&lt;/i&gt; 一级D&lt;span class="label label-warning pull-right"&gt;5&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;i class="glyphicon glyphicon-calendar"&gt;&lt;/i&gt; 一级E&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;i class="glyphicon glyphicon-fire"&gt;&lt;/i&gt; 一级F&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br>
+
+<!--普通导航栏-->
+<div class="container-fluid">
+<div>
+    <ul class="nav nav-pills nav-tabs" id="mytab2" role="tablist">
+        <li role="presentation" class="active"><a href="#">一级A</a></li>
+        <li role="presentation"><a href="#">一级B</a></li>
+        <li role="presentation" ><a href="#">一级C</a></li>
+        <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">一级D
+            <span class="caret"></span>
+            <ul class="dropdown-menu" role="menu">
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级A</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级B</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级C</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级D</a></li>
+            </ul>
+        </a>
+        </li>
+    </ul>
+</div>
+<div class="showDetails">
+<button type="button" class="btn btn-default col-md-12">显示源代码</button>
+<pre class="pre-scrollable" style="color:red;display: none">
+&lt;div&gt;
+    &lt;ul class="nav nav-pills nav-tabs" id="mytab2" role="tablist"&gt;
+        &lt;li role="presentation" class="active"&gt;&lt;a href="#"&gt;一级A&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="presentation"&gt;&lt;a href="#"&gt;一级B&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="presentation" &gt;&lt;a href="#"&gt;一级C&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="presentation" class="dropdown"&gt;
+        &lt;a class="dropdown-toggle" data-toggle="dropdown" href="#"&gt;一级D
+            &lt;span class="caret"&gt;&lt;/span&gt;
+            &lt;ul class="dropdown-menu" role="menu"&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级A&lt;/a&gt;&lt;/li&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级B&lt;/a&gt;&lt;/li&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级C&lt;/a&gt;&lt;/li&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级D&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+</div>
+<br><br><br><br><br>
+<div>
+    <ul class="nav nav-tabs" id="mytab3" role="tablist">
+        <li role="presentation" class="active"><a href="#">一级A</a></li>
+        <li role="presentation"><a href="#">一级B</a></li>
+        <li role="presentation"><a href="#">一级C</a></li>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">一级D
+            <span class="caret"></span>
+            <ul class="dropdown-menu" role="menu">
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级A</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级B</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级C</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级D</a></li>
+            </ul>
+        </a>
+        </li>
+    </ul>
+</div>
+<div class="showDetails">
+<button type="button" class="btn btn-default col-md-12">显示源代码</button>
+<pre class="pre-scrollable" style="color:red;display: none">
+&lt;div&gt;
+    &lt;ul class="nav nav-tabs" id="mytab3" role="tablist"&gt;
+        &lt;li role="presentation" class="active"&gt;&lt;a href="#"&gt;一级A&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="presentation"&gt;&lt;a href="#"&gt;一级B&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="presentation"&gt;&lt;a href="#"&gt;一级C&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="presentation" class="dropdown"&gt;
+        &lt;a class="dropdown-toggle" data-toggle="dropdown" href="#"&gt;一级D
+            &lt;span class="caret"&gt;&lt;/span&gt;
+            &lt;ul class="dropdown-menu" role="menu"&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级A&lt;/a&gt;&lt;/li&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级B&lt;/a&gt;&lt;/li&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级C&lt;/a&gt;&lt;/li&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级D&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+</div>
+<br><br><br><br><br>
+<div>
+    <ul class="nav navbar-inverse nav-tabs" id="mytab4" role="tablist">
+        <li role="presentation" class="active"><a href="#">一级A</a></li>
+        <li role="presentation"><a href="#">一级B</a></li>
+        <li role="presentation"><a href="#">一级C</a></li>
+        <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">一级D
+            <span class="caret"></span>
+            <ul class="dropdown-menu" role="menu">
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级A</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级B</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级C</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级D</a></li>
+            </ul>
+        </a>
+        </li>
+    </ul>
+</div>
+<div class="showDetails">
+<button type="button" class="btn btn-default col-md-12">显示源代码</button>
+<pre class="pre-scrollable" style="color:red;display: none">
+&lt;div&gt;
+    &lt;ul class="nav navbar-inverse nav-tabs" id="mytab4" role="tablist"&gt;
+        &lt;li role="presentation" class="active"&gt;&lt;a href="#"&gt;一级A&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="presentation"&gt;&lt;a href="#"&gt;一级B&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="presentation"&gt;&lt;a href="#"&gt;一级C&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="presentation" class="dropdown"&gt;
+        &lt;a class="dropdown-toggle" data-toggle="dropdown" href="#"&gt;一级D
+            &lt;span class="caret"&gt;&lt;/span&gt;
+            &lt;ul class="dropdown-menu" role="menu"&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级A&lt;/a&gt;&lt;/li&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级B&lt;/a&gt;&lt;/li&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级C&lt;/a&gt;&lt;/li&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级D&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+</div>
+<br><br><br><br><br>
+<div>
+    <ul class="nav nav-justified nav-pills nav-tabs" id="mytab5" role="tablist">
+        <li role="presentation" class="active"><a href="#">一级A</a></li>
+        <li role="presentation"><a href="#">一级B</a></li>
+        <li role="presentation"><a href="#">一级C</a></li>
+        <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">一级D
+            <span class="caret"></span>
+            <ul class="dropdown-menu " role="menu">
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级A</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级B</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级C</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1">二级D</a></li>
+            </ul>
+        </a>
+        </li>
+    </ul>
+</div>
+<div class="showDetails">
+<button type="button" class="btn btn-default col-md-12">显示源代码</button>
+<pre class="pre-scrollable" style="color:red;display: none">
+&lt;div&gt;
+    &lt;ul class="nav nav-justified nav-pills nav-tabs" id="mytab5" role="tablist"&gt;
+        &lt;li role="presentation" class="active"&gt;&lt;a href="#"&gt;一级A&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="presentation"&gt;&lt;a href="#"&gt;一级B&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="presentation"&gt;&lt;a href="#"&gt;一级C&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="presentation" class="dropdown"&gt;
+        &lt;a class="dropdown-toggle" data-toggle="dropdown" href="#"&gt;一级D
+            &lt;span class="caret"&gt;&lt;/span&gt;
+            &lt;ul class="dropdown-menu " role="menu"&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级A&lt;/a&gt;&lt;/li&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级B&lt;/a&gt;&lt;/li&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级C&lt;/a&gt;&lt;/li&gt;
+                &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1"&gt;二级D&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+</div>
+</div>
+    <div class="showDetails">
+        <button type="button" class="btn btn-danger col-md-12" data-toggle="button">JS源代码</button>
+        <pre class="pre-scrollable" style="color:red;display: none">
+<h3 style="color:black;">js切换效果源代码如下：</h3>
+&lt;script&gt;
+    $(document).ready(function(){
+        //顶部导航栏的切换效果
+        $("#mytab1 li").click(function (e) {
+            e.preventDefault();
+            $("#mytab1 li").removeClass("active");
+            $(this).addClass("active");
+        });
+        //一般导航栏的切换效果
+        $('#mytab2 li').click(function (e) {
+            e.preventDefault();
+            $("#mytab2 li").removeClass("active");
+            $(this).addClass("active");
+        });
+        $('#mytab3 li').click(function (e) {
+            e.preventDefault();
+            $("#mytab3 li").removeClass("active");
+            $(this).addClass("active");
+        });
+        $('#mytab4 li').click(function (e) {
+            e.preventDefault();
+            $("#mytab4 li").removeClass("active");
+            $(this).addClass("active");
+        });
+        $('#mytab5 li').click(function (e) {
+            e.preventDefault();
+            $("#mytab5 li").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+&lt;/script&gt;
+</pre>
+</div>
+</div>
+</body>
+</html>
